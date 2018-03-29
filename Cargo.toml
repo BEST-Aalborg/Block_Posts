@@ -1,0 +1,22 @@
+[package]
+name = "block_posts"
+version = "0.1.0"
+authors = ["dennis"]
+
+[lib]
+name = "block_ports"
+crate-type = ["cdylib"]
+
+[dependencies]
+template = { path = "../BEST_Bot_template"}
+
+slack = { git = "https://github.com/dvarum12/slack-rs"}
+slack_api = { git = "https://github.com/dvarum12/slack-rs-api" }
+easy_toml_config = { git = "https://github.com/BEST-Aalborg/easy_toml_config" }
+lazy_static = "*"
+serde = "*"
+serde_derive = "*"
+serde_json = "*"
+
+log = "*"
+simple-logging = "*"
