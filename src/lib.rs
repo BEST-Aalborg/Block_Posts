@@ -53,16 +53,16 @@ impl Plugin for Base {
     }
 
     /// Tells BEST-Bot which events/actions the plugin requires to work
-    fn event_subscript(&self) -> Vec<EVENT_SUBSCRIBE> {
-        vec![EVENT_SUBSCRIBE::STANDARD_MESSAGE]
+    fn event_subscript(&self) -> Vec<EventSubscribe> {
+        vec![EventSubscribe::StandardMessage]
     }
 
     /// Then one of the event the plugin subscript to are triggered, this functions is called and
     /// the information are handed over to the plugin.
-    fn event(&self, event: EVENT) {
+    fn event(&self, event: Event) {
         if config::CONFIG.enable {
             match event {
-                EVENT::STANDARD_MESSAGE(standard_message) => {
+                Event::StandardMessage(standard_message) => {
                     misc::delete_post_from_channel(standard_message, &self.slack.as_ref().unwrap())
                 },
             }
